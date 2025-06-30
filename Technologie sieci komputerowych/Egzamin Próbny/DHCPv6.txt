@@ -1,0 +1,16 @@
+cisco
+en
+cisco
+
+conf t
+ipv6 dhcp pool Lan3
+address prefix 2001:DB8:3::/64
+int g 0/0/0
+ipv6 en
+ipv6 add 2001:DB8:3::1/64
+ipv6 dhcp server Lan3
+ipv6 nd managed-config-flag
+end
+w
+
+show ipv6 interface brief

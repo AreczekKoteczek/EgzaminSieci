@@ -1,0 +1,582 @@
+wszystkie konfiguracje są po w kolejności S1>S2>S3>R1>R2>R3
+Konfiguracja urządzeń bardzo podstawowa jest, Adresy IP w wersji 4-ej, na 6-tą nie starczy mi niestety czasu, musiałbym sobie przypomnieć obliczanie, routingi zrobione przez OSPF są, nie ma wszystkich zabezppieczeń tj. service password encryption, powyłączane nieużywane interfejsy i przeniesione na inny vlan itp.
+
+!
+version 15.0
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname MJ1
+!
+enable secret 5 $1$mERr$5yKCNvYSRiwEU2pNVMuwC.
+!
+!
+!
+ip ssh version 2
+ip domain-name siec.local
+!
+username admin privilege 1 password 0 dostep1234
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ ip address 192.168.190.34 255.255.255.240
+!
+ip default-gateway 192.168.190.33
+!
+!
+!
+!
+line con 0
+ password dostep1234
+ login
+!
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login
+!
+!
+!
+!
+end
+
+!
+version 15.0
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname MJ2
+!
+enable secret 5 $1$mERr$5yKCNvYSRiwEU2pNVMuwC.
+!
+!
+!
+ip ssh version 2
+ip domain-name siec.local
+!
+username admin privilege 1 password 0 dostep1234
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ ip address 192.168.190.2 255.255.255.224
+!
+ip default-gateway 192.168.190.1
+!
+!
+!
+!
+line con 0
+ password dostep1234
+ login
+!
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login
+!
+!
+!
+!
+end
+
+!
+version 15.0
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname MJ3
+!
+enable secret 5 $1$mERr$5yKCNvYSRiwEU2pNVMuwC.
+!
+!
+!
+ip ssh version 2
+ip domain-name siec.local
+!
+username admin privilege 1 password 0 dostep1234
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ ip address 192.168.190.50 255.255.255.248
+!
+ip default-gateway 192.168.190.49
+!
+!
+!
+!
+line con 0
+ password dostep1234
+ login
+!
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login
+!
+!
+!
+!
+end
+
+!
+version 15.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R1
+!
+!
+!
+enable secret 5 $1$mERr$5yKCNvYSRiwEU2pNVMuwC.
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+username admin password 0 dostep1234
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+ip domain-name siec.local
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ ip address 192.168.190.33 255.255.255.240
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/1/0
+ ip address 192.168.190.57 255.255.255.252
+!
+interface Serial0/1/1
+ ip address 192.168.190.66 255.255.255.252
+ clock rate 2000000
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ log-adjacency-changes
+ network 192.168.190.32 0.0.0.15 area 0
+ network 192.168.190.56 0.0.0.3 area 0
+ network 192.168.190.64 0.0.0.3 area 0
+!
+router rip
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ password dostep1234
+ login
+!
+line aux 0
+!
+line vty 0 4
+ login local
+ transport input ssh
+!
+!
+!
+end
+
+!
+version 15.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R2
+!
+!
+!
+enable secret 5 $1$mERr$5yKCNvYSRiwEU2pNVMuwC.
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+username admin password 0 dostep1234
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+ip domain-name siec.local
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ ip address 192.168.190.1 255.255.255.224
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/1/0
+ ip address 192.168.190.58 255.255.255.252
+ clock rate 2000000
+!
+interface Serial0/1/1
+ ip address 192.168.190.61 255.255.255.252
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ log-adjacency-changes
+ network 192.168.190.0 0.0.0.31 area 0
+ network 192.168.190.56 0.0.0.3 area 0
+ network 192.168.190.60 0.0.0.3 area 0
+!
+router rip
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ password dostep1234
+ login
+!
+line aux 0
+!
+line vty 0 4
+ login local
+ transport input ssh
+!
+!
+!
+end
+
+!
+version 15.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R3
+!
+!
+!
+enable secret 5 $1$mERr$5yKCNvYSRiwEU2pNVMuwC.
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+username admin password 0 dostep1234
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+ip domain-name siec.local
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ ip address 192.168.190.49 255.255.255.248
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/1
+ ip address 158.75.39.2 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface Serial0/1/0
+ ip address 192.168.190.62 255.255.255.252
+ clock rate 2000000
+!
+interface Serial0/1/1
+ ip address 192.168.190.65 255.255.255.252
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ log-adjacency-changes
+ network 192.168.190.48 0.0.0.7 area 0
+ network 192.168.190.60 0.0.0.3 area 0
+ network 192.168.190.64 0.0.0.3 area 0
+!
+router rip
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ password dostep1234
+ login
+!
+line aux 0
+!
+line vty 0 4
+ login local
+ transport input ssh
+!
+!
+!
+end
+
+

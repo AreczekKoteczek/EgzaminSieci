@@ -1,0 +1,71 @@
+en
+conf t
+no ip domain-lookup
+service p
+
+
+hostname SR
+enable secret class
+enable passw cisco
+username admin password cisco
+ip domain-name merito.wsb
+ip ssh version 2
+ip ssh ti 60
+ip ssh a 3
+cry k g r
+1024
+
+banner motd #Switch MJ, Marcel Janowicz#
+
+
+line console 0
+pass cisco
+login
+
+line vty 0 15
+login local
+transport input ssh
+
+vlan 10
+name HR
+vlan 20
+name Sales
+vlan 30
+name Marketing
+int fa 0/2
+switchport acc vlan 10
+int fa 0/3
+switchport acc vlan 20
+int fa 0/4
+switchport acc vlan 30
+
+vlan 99
+name Off
+int range fa 0/5-24
+switchport access vlan 99
+sh
+
+interface range FastEthernet0/1 - 24
+switchport mode access
+switchport port-security
+switchport port-security maximum 1
+switchport port-security mac-address sticky
+switchport port-security violation restrict
+
+int range g 0/1-2
+switchport mode access
+switchport port-security
+switchport port-security maximum 1
+switchport port-security mac-address sticky
+switchport port-security violation restrict
+switchport access vlan 99
+sh
+
+int fa 0/1
+switchpo mod tru
+switchpo tru all vlan 10,20,30
+no switchport port-security
+
+end
+w
+

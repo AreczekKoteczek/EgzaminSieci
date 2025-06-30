@@ -1,0 +1,49 @@
+en
+conf t
+no ip domain-lookup
+service p
+
+hostname MJ
+enable secret class
+enable passw cisco
+username admin password cisco
+ip domain-name merito.wsb
+ip ssh version 2
+ip ssh ti 60
+ip ssh a 3
+cry k g r
+1024
+banner motd #Switch MJ, Marcel Janowicz#
+
+line console 0
+pass cisco
+login
+
+line vty 0 15
+login local
+transport input ssh
+
+end
+w
+
+
+int g 0/0/0
+ip add 192.168.191.1 255.255.255.0
+no sh
+int g 0/0/1.10
+encap do 10
+ip add 192.168.192.1 255.255.255.0
+int g 0/0/1.20
+encap do 20
+ip add 192.168.193.1 255.255.255.0
+int g 0/0/1.30
+encap do 30
+ip add 192.168.194.1 255.255.255.0
+int g 0/0/1
+no sh
+
+end
+w
+
+
+

@@ -1,0 +1,32 @@
+en
+conf t
+no ip domain-lookup
+service p
+int g 0/0/0
+ip add 192.168.30.1 255.255.255.0
+no sh
+exit
+
+hostname R3
+enable secret cisco
+enable passw cisco
+username admin password cisco
+ip domain-name kocham.wsb.merito
+ip ssh version 2
+ip ssh ti 60
+ip ssh a 3
+cry k g r
+1024
+banner motd #Wstęp tylko dla administrtatorów Kochaqnego Merito#
+
+line console 0
+pass cisco
+login
+
+line vty 0 15
+login local
+transport input ssh
+
+end
+w
+

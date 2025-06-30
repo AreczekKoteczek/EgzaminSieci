@@ -1,0 +1,11 @@
+cisco
+en
+cisco
+
+conf t
+int g 0/0/0
+ipv6 en
+end
+w
+
+show ipv6 interface brief
