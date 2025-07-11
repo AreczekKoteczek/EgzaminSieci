@@ -65,3 +65,6 @@ vxlan-gpe	 | 	VXLAN-GPE – Virtual eXtensible LAN Generic Protocol Extension �
 bgp	 | 	BGP – Border Gateway Protocol – Protokół trasowania między systemami autonomicznymi w internecie.
 geneve	 | 	Geneve – Generic Network Virtualization Encapsulation – Nowoczesny protokół enkapsulacji tuneli sieciowych.
 safet	 | 	SAFET – Safety over EtherCAT – Protokół przemysłowy do bezpiecznej transmisji danych (głównie w kolejnictwie i automatyce).
+vxlan	 | 	VXLAN – Virtual Extensible LAN - Tworzy wirtualne sieci LAN nad siecią IP, często używany w data center.
+whois	 | 	WHOIS – WHOIS Protocol - Umożliwia sprawdzenie informacji o domenach i adresach IP.
+mqtt	 | 	MQTT – Message Queuing Telemetry - Lekki protokół do komunikacji IoT w modelu publish/subscribe.
